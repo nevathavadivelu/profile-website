@@ -52,6 +52,14 @@ ul { list-style: none; }
 .more.open { display: block; }
 .toggle-more { background: none; border: 0; color: var(--color-primary-light); cursor: pointer; font: inherit; margin-top: var(--spacing-sm); padding: 0; }
 
+/* Interests grid: 3 / 2 / 1 columns */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+.card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: var(--spacing-lg);
+  text-align: center; box-shadow: 0 2px 8px var(--color-shadow); transition: transform var(--transition-speed), box-shadow var(--transition-speed); }
+.card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px var(--color-shadow); }
+.card-icon { font-size: 2.5rem; }
+.card p { color: var(--color-text-secondary); }
+
 /* Footer */
 .site-footer { background: var(--color-primary); color: var(--color-text-inverse); text-align: center; padding: var(--spacing-xl) var(--spacing-md); }
 .social { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
