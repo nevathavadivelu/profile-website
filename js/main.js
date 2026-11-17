@@ -13,6 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
   toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
   $$('a', links).forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
+  /* 2. Show More / Show Less on timeline milestones */
+  $$('.toggle-more').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const more = btn.previousElementSibling;
+      const open = more.classList.toggle('open');
+      btn.textContent = open ? 'Show Less' : 'Show More';
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+
   /* 3. Scroll-triggered animations with IntersectionObserver */
   const revealEls = $$('.reveal');
   if ('IntersectionObserver' in window) {
