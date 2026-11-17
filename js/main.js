@@ -44,6 +44,35 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => card.classList.toggle('flipped'));
   });
 
+  /* 5. Hobby lightbox: open on click/Enter, close via button, backdrop or Escape */
+  const box = $('#lightbox');
+  const boxImg = $('#lightbox-img');
+  const boxText = $('#lightbox-text');
+  const closeBtn = $('#lightbox-close');
+  let lastFocus = null;
+  const openBox = (fig) => {
+    const img = $('img', fig);
+    boxImg.src = img.src;
+    boxImg.alt = img.alt;
+    boxText.textContent = img.dataset.description;
+    lastFocus = fig;
+    box.hidden = false;
+    closeBtn.focus();
+  };
+  const closeBox = () => {
+    box.hidden = true;
+    if (lastFocus) lastFocus.focus();
+  };
+  $$('.gallery figure').forEach((fig) => {
+    fig.addEventListener('click', () => openBox(fig));
+    fig.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBox(fig); }
+    });
+  });
+  closeBtn.addEventListener('click', closeBox);
+  box.addEventListener('click', (e) => { if (e.target === box) closeBox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) closeBox(); });
+
   /* 6. Footer: automatic copyright year + back-to-top */
   $('#year').textContent = new Date().getFullYear();
   $('#back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
