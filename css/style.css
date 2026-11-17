@@ -60,6 +60,20 @@ ul { list-style: none; }
 .card-icon { font-size: 2.5rem; }
 .card p { color: var(--color-text-secondary); }
 
+/* Family: warm palette scoped to this section only */
+#family { --color-bg: #fff4e6; --color-bg-card: #ffe3c4; --color-primary: #8a4b1f; --color-text: #5a3414;
+  --color-text-secondary: #8a5a30; --color-accent: #d9622b; --color-border: #f0c89a; background: var(--color-bg); color: var(--color-text); }
+.banner { width: 100%; max-height: 320px; object-fit: cover; border-radius: var(--border-radius); margin-bottom: var(--spacing-lg); }
+.family-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-lg); }
+.flip { perspective: 800px; height: 260px; cursor: pointer; border: 0; background: none; font: inherit; padding: 0; }
+.flip-inner { position: relative; width: 100%; height: 100%; transition: transform 0.7s; transform-style: preserve-3d; }
+.flip:hover .flip-inner, .flip:focus-visible .flip-inner, .flip.flipped .flip-inner { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: var(--spacing-md);
+  border-radius: var(--border-radius); backface-visibility: hidden; background: var(--color-bg-card); border: 1px solid var(--color-border);
+  color: var(--color-text); box-shadow: 0 2px 8px var(--color-shadow); }
+.face img { width: 100%; height: 170px; object-fit: cover; border-radius: var(--border-radius); margin-bottom: var(--spacing-sm); }
+.back { transform: rotateY(180deg); background: var(--color-primary); color: var(--color-text-inverse); }
+
 /* Footer */
 .site-footer { background: var(--color-primary); color: var(--color-text-inverse); text-align: center; padding: var(--spacing-xl) var(--spacing-md); }
 .social { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }

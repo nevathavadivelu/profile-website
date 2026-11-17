@@ -39,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach((el) => el.classList.add('visible')); // fallback
   }
 
+  /* 4. Family flip cards: click/tap (and keyboard) toggles the flip */
+  $$('.flip').forEach((card) => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  });
+
   /* 6. Footer: automatic copyright year + back-to-top */
   $('#year').textContent = new Date().getFullYear();
   $('#back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
