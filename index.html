@@ -119,7 +119,46 @@
       </div>
     </section>
 
+    <!-- 5. HOBBIES -->
+    <section id="hobbies" class="section">
+      <div class="container">
+        <h2>Hobbies &amp; Passions</h2>
+        <div class="gallery">
+        <figure class="reveal" tabindex="0" role="button" aria-label="Expand Photography">
+          <img src="images/hobbies/photography.svg" alt="Photography placeholder image" data-description="[PLACEHOLDER] Describe what you love to photograph.">
+          <figcaption>Photography</figcaption>
+        </figure>
+        <figure class="reveal" tabindex="0" role="button" aria-label="Expand Cooking">
+          <img src="images/hobbies/cooking.svg" alt="Cooking placeholder image" data-description="[PLACEHOLDER] Describe your favourite dishes to cook.">
+          <figcaption>Cooking</figcaption>
+        </figure>
+        <figure class="reveal" tabindex="0" role="button" aria-label="Expand Gaming">
+          <img src="images/hobbies/gaming.svg" alt="Gaming placeholder image" data-description="[PLACEHOLDER] Describe the games you enjoy.">
+          <figcaption>Gaming</figcaption>
+        </figure>
+        <figure class="reveal" tabindex="0" role="button" aria-label="Expand Gardening">
+          <img src="images/hobbies/gardening.svg" alt="Gardening placeholder image" data-description="[PLACEHOLDER] Describe your garden or plants.">
+          <figcaption>Gardening</figcaption>
+        </figure>
+        <figure class="reveal" tabindex="0" role="button" aria-label="Expand Sports">
+          <img src="images/hobbies/sports.svg" alt="Sports placeholder image" data-description="[PLACEHOLDER] Describe the sports you play or follow.">
+          <figcaption>Sports</figcaption>
+        </figure>
+        <figure class="reveal" tabindex="0" role="button" aria-label="Expand Art">
+          <img src="images/hobbies/art.svg" alt="Art placeholder image" data-description="[PLACEHOLDER] Describe your art or creative work.">
+          <figcaption>Art</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Lightbox modal for hobby images -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Hobby image viewer" hidden>
+    <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="images/hobbies/art.svg" alt="Expanded hobby image">
+    <p id="lightbox-text"></p>
+  </div>
 
   <!-- 6. FOOTER -->
   <footer id="footer" class="site-footer">
