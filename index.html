@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal profile website">
+  <title>[Your Name] | Personal Profile</title>
+  <!-- theme.css first: it holds ALL global design variables -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="#hero">[Your Name]</a>
+      <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">&#9776;</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#family">Family</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-inner container">
+        <img class="avatar" src="images/hero/avatar.svg" alt="Portrait placeholder of [Your Name]">
+        <h1>[Your Name]</h1>
+        <p class="tagline">[Your Role] | [Your Interest] | [Your Passion]</p>
+        <a class="btn" href="#journey">Explore My Journey &rarr;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 6. FOOTER -->
+  <footer id="footer" class="site-footer">
+    <div class="social">
+      <a href="https://www.linkedin.com/in/[your-profile]" aria-label="LinkedIn">in</a>
+      <a href="https://github.com/[your-username]" aria-label="GitHub">GH</a>
+      <a href="mailto:[your-email]" aria-label="Email">@</a>
+    </div>
+    <p>Built with HTML, CSS &amp; JS | Deployed via GitHub Actions</p>
+    <p>&copy; <span id="year"></span> [Your Name]. All rights reserved.</p>
+    <button type="button" id="back-to-top" class="btn to-top">&uarr; Back to top</button>
+  </footer>
+</body>
+</html>
