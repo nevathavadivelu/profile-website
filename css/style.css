@@ -61,18 +61,150 @@ ul { list-style: none; }
 .card p { color: var(--color-text-secondary); }
 
 /* Family: warm palette scoped to this section only */
-#family { --color-bg: #fff4e6; --color-bg-card: #ffe3c4; --color-primary: #8a4b1f; --color-text: #5a3414;
-  --color-text-secondary: #8a5a30; --color-accent: #d9622b; --color-border: #f0c89a; background: var(--color-bg); color: var(--color-text); }
-.banner { width: 100%; max-height: 320px; object-fit: cover; border-radius: var(--border-radius); margin-bottom: var(--spacing-lg); }
-.family-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-lg); }
-.flip { perspective: 800px; height: 260px; cursor: pointer; border: 0; background: none; font: inherit; padding: 0; }
-.flip-inner { position: relative; width: 100%; height: 100%; transition: transform 0.7s; transform-style: preserve-3d; }
-.flip:hover .flip-inner, .flip:focus-visible .flip-inner, .flip.flipped .flip-inner { transform: rotateY(180deg); }
-.face { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: var(--spacing-md);
-  border-radius: var(--border-radius); backface-visibility: hidden; background: var(--color-bg-card); border: 1px solid var(--color-border);
-  color: var(--color-text); box-shadow: 0 2px 8px var(--color-shadow); }
-.face img { width: 100%; height: 170px; object-fit: cover; border-radius: var(--border-radius); margin-bottom: var(--spacing-sm); }
-.back { transform: rotateY(180deg); background: var(--color-primary); color: var(--color-text-inverse); }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f8f5ef;
+}
+
+.family-section {
+    padding: 40px 30px;
+}
+
+.family-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.family-card {
+    background-color: #fffaf2;
+    border: 1px solid #e8d9c5;
+    border-radius: 22px;
+    min-height: 550px;
+    padding: 65px 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(80, 55, 30, 0.10);
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.family-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(80, 55, 30, 0.18);
+}
+
+/* Father Card */
+
+.father {
+    background-color: #f2e4d3;
+    border: 1px solid #a77b55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.father-content h2 {
+    color: #a47752;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.father-content p {
+    color: #594536;
+    font-size: 23px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* Family Images */
+
+.family-card img {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #f0e5d6;
+    margin-bottom: 25px;
+}
+
+/* Names */
+
+.family-card h2 {
+    color: #a47752;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Relationship */
+
+.relation {
+    color: #594536;
+    font-size: 23px;
+    margin-bottom: 60px;
+}
+
+/* Hover Text */
+
+.hover-text {
+    color: #a47752;
+    font-size: 18px;
+    font-style: italic;
+    transition: 0.3s;
+}
+
+/* Additional Information */
+
+.extra-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a47752;
+    color: white;
+    padding: 25px 15px;
+    font-size: 17px;
+    line-height: 1.5;
+    transform: translateY(100%);
+    transition: 0.4s ease;
+}
+
+.family-card:not(.father):hover .extra-info {
+    transform: translateY(0);
+}
+
+.family-card:not(.father):hover .hover-text {
+    opacity: 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+    .family-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .family-container {
+        grid-template-columns: 1fr;
+    }
+
+    .family-card {
+        min-height: 450px;
+    }
+}
+
 
 /* Hobbies gallery */
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); }
@@ -87,12 +219,86 @@ ul { list-style: none; }
 .lightbox-close { position: absolute; top: var(--spacing-md); right: var(--spacing-md); background: none; border: 0; color: var(--color-text-inverse); font-size: 2.5rem; cursor: pointer; }
 
 /* Footer */
-.site-footer { background: var(--color-primary); color: var(--color-text-inverse); text-align: center; padding: var(--spacing-xl) var(--spacing-md); }
-.social { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
-.social a { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--color-text-inverse); border-radius: 50%;
-  text-decoration: none; font-weight: bold; transition: background var(--transition-speed), transform var(--transition-speed); }
-.social a:hover { background: var(--color-accent); transform: translateY(-3px); }
-.to-top { margin-top: var(--spacing-md); }
+
+/* Footer Section */
+
+.footer {
+    background-color: #4b382d;
+    color: #fff8ef;
+    padding: 55px 20px 25px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-content h2 {
+    font-size: 32px;
+    color: #e4c5a5;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+}
+
+.footer-quote {
+    font-size: 17px;
+    font-style: italic;
+    color: #e8d9c9;
+    max-width: 550px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: #fff8ef;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d6a879;
+}
+
+.footer-divider {
+    width: 80%;
+    height: 1px;
+    background-color: #a98b70;
+    margin: 25px auto;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #e8d9c9;
+}
+
+.footer-love {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #d6a879;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    .footer-links {
+        gap: 18px;
+    }
+
+    .footer-content h2 {
+        font-size: 26px;
+    }
+
+    .footer-quote {
+        font-size: 15px;
+    }
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
