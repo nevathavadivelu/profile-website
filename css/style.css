@@ -206,17 +206,180 @@ body {
 }
 
 
-/* Hobbies gallery */
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); }
-.gallery figure { overflow: hidden; border-radius: var(--border-radius); cursor: pointer; background: var(--color-bg-card); box-shadow: 0 2px 8px var(--color-shadow); }
-.gallery img { width: 100%; height: 220px; object-fit: cover; transition: transform var(--transition-speed); }
-.gallery figure:hover img, .gallery figure:focus-visible img { transform: scale(1.08); }
-.gallery figcaption { padding: var(--spacing-sm) var(--spacing-md); font-weight: bold; }
-.lightbox { position: fixed; inset: 0; z-index: 200; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: var(--spacing-lg); background: var(--color-primary-dark); color: var(--color-text-inverse); text-align: center; }
-.lightbox[hidden] { display: none; }
-.lightbox img { max-height: 70vh; border-radius: var(--border-radius); }
-.lightbox-close { position: absolute; top: var(--spacing-md); right: var(--spacing-md); background: none; border: 0; color: var(--color-text-inverse); font-size: 2.5rem; cursor: pointer; }
+/* ==================================
+   HOBBIES SECTION
+================================== */
+
+#hobbies {
+    padding: 60px 30px;
+    background-color: #f8f5ef;
+}
+
+#hobbies .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+#hobbies h2 {
+    text-align: center;
+    color: #956747;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.hobby-subtitle {
+    text-align: center;
+    color: #806650;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+
+/* ==================================
+   GALLERY
+================================== */
+
+#hobbies .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin: auto;
+}
+
+
+/* ==================================
+   HOBBY CARDS
+================================== */
+
+#hobbies .hobby-card {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+
+    background-color: #fffaf2;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    text-align: center;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#hobbies .hobby-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+
+/* ==================================
+   HOBBY IMAGES
+================================== */
+
+#hobbies .hobby-card img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: 160px;
+
+    object-fit: cover;
+
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ==================================
+   HOBBY TITLES
+================================== */
+
+#hobbies .hobby-card figcaption {
+    color: #956747;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    padding: 20px 10px;
+}
+
+
+/* ==================================
+   QUOTES - HIDDEN INITIALLY
+================================== */
+
+#hobbies .quote {
+
+    background-color: #f1e3d3;
+    color: #634936;
+
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.6;
+
+    max-height: 0;
+    opacity: 0;
+
+    overflow: hidden;
+
+    padding: 0 15px;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.4s ease,
+        padding 0.4s ease;
+}
+
+
+/* ==================================
+   SHOW QUOTE WHEN CLICKED
+================================== */
+
+#hobbies .hobby-card.active .quote {
+
+    max-height: 120px;
+
+    opacity: 1;
+
+    padding: 20px 15px;
+}
+
+
+/* ==================================
+   RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 900px) {
+
+    #hobbies .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    #hobbies .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    #hobbies h2 {
+        font-size: 28px;
+    }
+
+    #hobbies .hobby-card img {
+        height: 200px;
+    }
+
+}
 
 /* Footer */
 
