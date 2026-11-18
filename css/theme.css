@@ -1,0 +1,40 @@
+/* theme.css - the ONLY place global design values live (light theme). */
+:root {
+  /* Primary Colors */
+  --color-primary: #7b3f00;
+  --color-primary-light: #d4813b;
+  --color-primary-dark: #4a2511;
+
+  /* Background Colors */
+  --color-bg: #fffaf3;
+  --color-bg-secondary: #fdf0e0;
+  --color-bg-card: #ffffff;
+
+  /* Text Colors */
+  --color-text: #4a2c1a;
+  --color-text-secondary: #8a6a55;
+  --color-text-inverse: #ffffff;
+
+  /* Accent & Borders */
+  --color-accent: #c0392b;
+  --color-border: #ecd5bd;
+  --color-shadow: rgba(74, 37, 17, 0.12);
+
+  /* Typography */
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: 'Georgia', serif;
+  --font-size-base: 16px;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
